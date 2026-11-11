@@ -6,6 +6,9 @@ on:
       - main
 
   workflow_dispatch:
+	
+permissions:
+	contents:read
 
 jobs:
   build-and-push:
@@ -39,6 +42,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/maven-github-demo:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/maven-github-demo:${{ github.sha }}
+          tags: $
+           {{ secrets.DOCKERHUB_USERNAME }}/maven-github-demo:latest
+           
